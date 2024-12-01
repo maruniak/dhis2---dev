@@ -1,0 +1,8 @@
+Organisation unit ID,Name,Parent ID,Opening Date
+UA,Ukraine,,2023-01-01
+KY,Kyiv,UA,2023-01-01
+OD,Odessa,UA,2023-01-01
+MCN1,Mobile Clinic n1,KY,2023-01-01
+MCN2,Mobile Clinic n2,KY,2023-01-01
+MCN3,Mobile Clinic n3,OD,2023-01-01
+MCN4,Mobile Clinic n4,OD,2023-01-01

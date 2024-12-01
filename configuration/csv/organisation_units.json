@@ -1,0 +1,64 @@
+{
+    "organisationUnits": [
+        {
+            "id": "l7YdLw9HCBJ",
+            "name": "Ukraine",
+            "shortName": "Ukraine",
+            "openingDate": "2023-01-01"
+        },
+        {
+            "id": "iQacORWXWNK",
+            "name": "Kyiv",
+            "shortName": "Kyiv",
+            "openingDate": "2023-01-01",
+            "parent": {
+                "id": "l7YdLw9HCBJ"
+            }
+        },
+        {
+            "id": "A6aRhhTe0QW",
+            "name": "Odessa",
+            "shortName": "Odessa",
+            "openingDate": "2023-01-01",
+            "parent": {
+                "id": "l7YdLw9HCBJ"
+            }
+        },
+        {
+            "id": "iGV6ncIvkVF",
+            "name": "Mobile Clinic n1",
+            "shortName": "Mobile Clinic n1",
+            "openingDate": "2023-01-01",
+            "parent": {
+                "id": "iQacORWXWNK"
+            }
+        },
+        {
+            "id": "g2op72yJbKD",
+            "name": "Mobile Clinic n2",
+            "shortName": "Mobile Clinic n2",
+            "openingDate": "2023-01-01",
+            "parent": {
+                "id": "iQacORWXWNK"
+            }
+        },
+        {
+            "id": "kZbgC9O7dD0",
+            "name": "Mobile Clinic n3",
+            "shortName": "Mobile Clinic n3",
+            "openingDate": "2023-01-01",
+            "parent": {
+                "id": "A6aRhhTe0QW"
+            }
+        },
+        {
+            "id": "q5iej0LAS9H",
+            "name": "Mobile Clinic n4",
+            "shortName": "Mobile Clinic n4",
+            "openingDate": "2023-01-01",
+            "parent": {
+                "id": "A6aRhhTe0QW"
+            }
+        }
+    ]
+}
