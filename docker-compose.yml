@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  dhis2:
+    image: dhis2/core-dev:latest  # Use a pre-built development image
+    container_name: ${COMPOSE_PROJECT_NAME}_dhis2-app
+    ports:
+      - "${EXTERNAL_PORT}:8080"  # Expose DHIS2 on port 8080
+    environment:
+      # Set DHIS2 home path and other necessary configurations
+      DHIS2_HOME: /DHIS2_home
+      JAVA_OPTS: "-Xmx2G -Xms512m"  # Adjust memory settings as needed
+      CATALINA_OPTS: "-Dcontext.path='/'"  # Optional: Specify context path
+      DHIS2_DB_DUMP_URL: https://databases.dhis2.org/sierra-leone/2.39/dhis2-db-sierra-leone.sql.gz  # Optional: Preload demo DB
+    volumes:
+      - dhis2_data:/DHIS2_home  # Persistent storage for DHIS2 data
+      - ./dhis.conf:/opt/dhis2/dhis.conf  # Mount local dhis.conf
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgis/postgis:13-3.1-alpine  # Use PostGIS for geospatial support
+    container_name: ${COMPOSE_PROJECT_NAME}_db
+    environment:
+      POSTGRES_DB: dhis2
+      POSTGRES_USER: dhis
+      POSTGRES_PASSWORD: dhis2
+      PGDATA: /var/lib/postgresql/data/pgdata  # Ensure persistent storage
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  dhis2_data:
+  postgres_data:
